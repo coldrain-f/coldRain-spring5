@@ -10,6 +10,6 @@
 	Hello world!  
 </h1>
 
-<p><c:out value="${jspObject }" /></p>
+<p><c:out value="${message }" /></p>
 </body>
 </html>

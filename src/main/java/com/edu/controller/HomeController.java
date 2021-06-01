@@ -1,7 +1,7 @@
 package com.edu.controller;
 
-import java.util.StringTokenizer;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,17 +18,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {		
-		String jspVar = "@서비스에서 처리한 결과";
+		String message = "@서비스에서 처리한 결과";		
+		model.addAttribute("message", message);
 		
-		String sentence = "SpringTokenizer Test";
-		String[] tokens = sentence.split(" ");
+		logger.info("Hello World! {}", message);
 		
-		model.addAttribute("tokens", tokens);
-		model.addAttribute("jspObject", jspVar);
-		
-		return "home";
+		return "home/index";
 	}
 	
 }

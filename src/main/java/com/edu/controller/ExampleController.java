@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping(value = "/examples", method = RequestMethod.GET)
 public class ExampleController {
 
+	
 	@RequestMapping(value = "/example01", method = RequestMethod.GET)
 	public String example01(String user_id, String user_password, Model model) {
 		System.out.println("ExampleController.example01");
